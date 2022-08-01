@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width = device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>DIFERENCIA DE EDADES</h1>
+        <script>
+            function saltoLinea(){
+                document.write("<br><br>");
+            }
+            function imprimir(frase){
+                document.write(frase);
+                saltoLinea();
+            }
+            const miEdad = 24;
+            const edadHermano = 26;
+            const edadAmigo = 23;
+
+            let diferenciaConHermano= edadHermano-miEdad;
+            let diferenciaConAmigo= miEdad-edadAmigo;
+            imprimir("<h1>***Nuestra diferencia de edad es la siguiente***</h1>");
+            imprimir("La diferencia de edad con mi hermano es: "+ diferenciaConHermano);
+            imprimir("La diferencia de edas con mi amigo es: "+ diferenciaConAmigo);
+    
+        </script>
+    </body>
+</html>
+
