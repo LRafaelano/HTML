@@ -58,8 +58,24 @@
     alturaInformada= prompt(nombre + ",  Informe su altura");
     imcCalculado= calcularImc(pesoInformado, alturaInformada)
     imprimir(nombre + " su indice de imc es: " + Math.round(imcCalculado));
- 
-    function saltarLinea() {
+    
+    if(imcCalculado < 18.5){
+        imprimir("IMC Por debajo de lo recomendado");
+    }
+    if(imcCalculado >= 18.5 && imcCalculado <= 24.9){
+        imprimir("IMC normal");
+    }
+    if(imcCalculado == 25){
+        imprimir("IMC con sobrepeso");
+    }
+    if(imcCalculado > 25 && imcCalculado <= 29.9){
+        imprimir("IMC con preobesidad");
+    }
+
+
+
+
+    /*function saltarLinea() {
 
         document.write("<br>");
     }
@@ -79,7 +95,7 @@
 
     var resultado = a(10,20) + b(30,2);
 
-    mostrar(resultado);
+    mostrar(resultado);*/
 
 
 
