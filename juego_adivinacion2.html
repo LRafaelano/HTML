@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF -8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width, initial-scale=1.0">
+    <title>NUMERO ALEATORIO</title>
+</head>
+<body>
+    <h1>PROGRAMA DE JUEGO DE ADIVINACIÓN</h1>
+    <script>
+         function saltoLinea(){
+                
+            document.write("<br><br>");
+        }
+        function imprimir(frase){
+            document.write(frase);
+            saltoLinea();
+        }
+        function sortear(n){
+            return Math.round(Math.random() * n);
+        }
+
+        const numeroPensado = sortear(10);
+        const numeroLanzado = parseInt(prompt("Ingrese un número entre 0 y 10"));
+
+       
+        if (numeroPensado == numeroLanzado){
+
+            imprimir("Usted ha acertado, el numero pensado era: "+ numeroPensado);
+        }
+        else{
+            if(numeroLanzado > numeroPensado){
+                imprimir("Usted ha errado, el numero es pensado " + numeroPensado+ ", es menor al numero lanzado "+ numeroLanzado); 
+            }
+            else{
+                imprimir("Usted ha errado, el numero es pensado " + numeroPensado+ ", es mayor al numero lanzado " + numeroLanzado);
+            }
+            
+
+        }   
+    </script>
+</body>
+</html>
