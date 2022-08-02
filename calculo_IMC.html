@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF -8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width, initial-scale=1.0">
+    <title>CALCULO IMC</title>
+</head>
+<body>
+
+    <h1>CALCULO DE IMC</h1>
+    <script>
+    function saltarLinea(){
+
+        document.write("<br>")
+        document.write("<br>")
+        document.write("<br>")
+
+    }
+    function imprimir(frase){
+
+        document.write(frase);
+        saltarLinea();
+
+    }
+    /*function calcularImc(peso,altura){
+
+        imc= peso /(altura * altura);
+        return (imc);
+
+    }
+    let miImc=calcularImc(70,1.60);
+    imprimir("Mi IMC es: "+ miImc);*/
+
+   
+    /*function calcularImc(peso,altura,nombre){
+
+        let imc= peso /(altura * altura);
+        imprimir("EL IMC de " +nombre+  "es: "+ Math.round(imc));
+
+    }
+    calcularImc(75,1.73,"Felipe");
+    calcularImc(70,1.60,"Ligia");*/
+
+    function calcularImc(peso,altura){
+
+        let imc= peso /(altura * altura);
+        return imc;
+       
+    }
+    
+
+    /*var miImc=calcularImc(71, 1.72);
+    var imcFelipe= calcularImc(75, 1.73);*/
+    imprimir("El promedio de imc de Christian y Felipe es: " + Math.round((calcularImc(71, 1.72)+calcularImc(75, 1.73))/2));
+    nombre= prompt("Informe su nombre")
+    pesoInformado= prompt(nombre + ", Informe su peso");
+    alturaInformada= prompt(nombre + ",  Informe su altura");
+    imcCalculado= calcularImc(pesoInformado, alturaInformada)
+    imprimir(nombre + " su indice de imc es: " + Math.round(imcCalculado));
+ 
+    function saltarLinea() {
+
+        document.write("<br>");
+    }
+
+    function mostrar(frase) {
+        document.write(frase);
+        saltarLinea();
+    }
+
+    function a(numero1, numero2) {
+        return numero1 + numero2;
+    }
+
+    function b(numero1, numero2) {
+        return numero1 / numero2;
+    }
+
+    var resultado = a(10,20) + b(30,2);
+
+    mostrar(resultado);
+
+
+
+    </script>
+</body>
+</html>
