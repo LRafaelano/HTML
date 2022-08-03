@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF -8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width, initial-scale=1.0">
+    <title>CALCULO DE MEDIA DE EDADES</title>
+</head>
+<body>
+    <h1>PROGRAMA - CALCULO DE MEDIA DE EDADES DE UNA FAMILIA</h1>
+    <script>
+         function saltoLinea(){
+                
+            document.write("<br><br>");
+        }
+        function imprimir(frase){
+            document.write(frase);
+            saltoLinea();
+        }
+
+        let cantMiembros = parseInt(prompt("Ingrese la cantidad de miembros que hay en su familia: " ));
+        imprimir("Cuantos miembros son en su familia: " + cantMiembros);
+
+        let contador = 1;
+        let totalEdades = 0;
+        while (contador <= cantMiembros){
+
+            
+            let edad = parseInt(prompt("Ingrese la edad del familiar "));
+            totalEdades = totalEdades + edad;
+            contador++;
+        }
+        imprimir("La suma de las edades es: " + totalEdades);
+        let Media = totalEdades/cantMiembros;
+        imprimir("La media de las edades es: "+ Media);
+    </script>
+</body>
+</html>
