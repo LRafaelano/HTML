@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1></h1>
+    <canvas width="600 px" height="400 px" >
+
+    </canvas>
+    <script>
+
+        let pantalla = document.querySelector("canvas");
+        let pincel = pantalla.getContext("2d");
+        let colores = ["blue", "red", "green"];
+        let indiceColor = 0;
+        pincel.fillStyle = "gray";//propiedad o caracteristica
+        pincel.fillRect(0,0,600,400);//funcion
+
+        function exibirAlerta(evento){
+
+            let x = evento.pageX - pantalla.offsetLeft;
+            let y = evento.pageY - pantalla.offsetTop;
+            console.log(evento);
+            alert("Usted hizo un click en la corrdenada "+ x + "," + y);
+
+        }
+
+        function dibujarCirculo(evento){
+
+            let x = evento.pageX - pantalla.offsetLeft;
+            let y = evento.pageY - pantalla.offsetTop;
+
+            pincel.fillStyle = colores[indiceColor];
+            pincel.beginPath();
+            pincel.arc(x, y, 10, 0, 2*3.14)
+            pincel.fill();
+            console.log(x + "," + y);
+            alert("Usted hizo un click en la corrdenada "+ x + "," + y);
+
+        }
+        pantalla.onclick = dibujarCirculo;
+        function alterarColor(){
+            indiceColor++;
+            
+            if(indiceColor >= colores.length){
+                indiceColor = 0;
+            }
+            alert("Color del Circulo "+ colores[indiceColor]);
+            return false;
+        }
+
+        
+
+        pantalla.oncontextmenu = alterarColor;
+
+       //pantalla.onclick = exibirAlerta;
+       
+
+       
+
+    </script>
+       
+</body>
+</html>
