@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1></h1>
+    <canvas width="600 px" height="400 px" >
+
+    </canvas>
+    <script>
+
+        let pantalla = document.querySelector("canvas");
+        let pincel = pantalla.getContext("2d");
+        pincel.fillStyle = "lightgray";//propiedad o caracteristica
+        pincel.fillRect(0,0,600,400);//funcion
+
+        var radio = 10;
+        let xAleatorio;
+        let yAleatorio;
+
+        function disenharCircunferencias(x, y, radio, color){
+
+            pincel.fillStyle = color;
+            pincel.beginPath();
+            pincel.arc(x, y, radio, 0, 2*Math.PI);
+            pincel.fill();
+        }
+
+        function limpiarPantalla(){
+            pincel.clearRect(0,0,600,400);
+        }
+        /*function exhibirMensaje(){
+            console.log("Mostrar mensaje");
+        }*/
+        function diseharObjetivo(x, y){
+            disenharCircunferencias(x, y,radio + 20, "red");
+            disenharCircunferencias(x, y,radio + 10, "white");
+            disenharCircunferencias(x, y,radio, "red");
+        }
+
+        function sortearPosicion(maximo){
+
+            return Math.floor(Math.random() * maximo);
+
+        }
+        
+        let x = 0;
+
+        function actualizarPantalla(){
+            
+            limpiarPantalla();
+            xAleatorio = sortearPosicion(600);
+            yAleatorio = sortearPosicion(400);
+            diseharObjetivo(xAleatorio, yAleatorio);
+            x++; 
+
+        }
+    
+        setInterval(actualizarPantalla, 1000) ;
+
+        function disparar(evento){
+            let x = evento.pageX - pantalla.offsetLeft;
+            let y = evento.pageY - pantalla.offsetTop;
+
+            if((x < xAleatorio + radio) && (x > xAleatorio - radio) && (y < yAleatorio + radio) && (y > yAleatorio -radio)){
+                alert("Tiro certero");
+            }
+        }
+        pantalla.onclick = disparar;
+    </script>
+</body>
+</html>
